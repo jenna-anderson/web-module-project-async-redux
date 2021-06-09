@@ -5,15 +5,15 @@ export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
 
 export const getActivity = () => {
-    return ( dispatch) => {
+    return (dispatch) => {
         dispatch(fetchStart());
         
         axios.get('https://www.boredapi.com/api/activity/')
         .then(res => {
-            console.log(res.data);
+            dispatch(fetchSuccess(res.data))
         })
         .catch(err => {
-            console.log(err);
+            dispatch(fetchFail(err))
         })
     }
 }

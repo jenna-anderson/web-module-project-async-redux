@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { getActivity } from '../actions';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 const Fact = (props) => {
     const { activity, isFetching, error } = props;
+
+    useEffect(() => {
+        props.dispatch(getActivity());
+    },[]);
 
     const handleClick = () => {
         props.dispatch(getActivity());
@@ -21,6 +24,10 @@ const Fact = (props) => {
     return(
         <div>
             <section>
+                <h2>Try this: {activity.activity}</h2>
+                <p>Type: {activity.type}</p>
+                <p>Number of People Needed: {activity.participants}</p>
+                <p>Price: ${activity.price}</p>
                 <button onClick={handleClick}>Get Unbored</button>
             </section>
         </div>
@@ -29,7 +36,7 @@ const Fact = (props) => {
 
 const mapStateToProps = state => {
     return{
-        fact: state.fact,
+        activity: state.activity,
         isFetching: state.isFetching,
         error: state.error
     }
