@@ -1,6 +1,33 @@
 import React, { useEffect } from 'react';
 import { getActivity } from '../actions';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+
+
+// const Container = styled.div`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// `;
+
+const Activity = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 2%auto;
+
+    button {
+        border: none;
+        padding: 2%;
+        margin: 2%;
+        background-color: #282c34;
+        color: white;
+        font-size: calc(10px + 2vmin);
+        font-weight: bold;
+    }
+`;
 
 const Fact = (props) => {
     const { activity, isFetching, error } = props;
@@ -22,15 +49,15 @@ const Fact = (props) => {
     }
 
     return(
-        <div>
-            <section>
-                <h2>Try this: {activity.activity}</h2>
+        // <Container>
+            <Activity>
+                <h2>{activity.activity}</h2>
                 <p>Type: {activity.type}</p>
                 <p>Number of People Needed: {activity.participants}</p>
                 <p>Price: ${activity.price}</p>
                 <button onClick={handleClick}>Get Unbored</button>
-            </section>
-        </div>
+            </Activity>
+        // </Container>
     )
 }
 
