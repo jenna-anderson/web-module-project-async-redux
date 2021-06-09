@@ -21,7 +21,7 @@ const Activity = styled.section`
     button {
         border: none;
         padding: 2%;
-        margin: 2%;
+        margin: 1%;
         background-color: #282c34;
         color: white;
         font-size: calc(10px + 2vmin);
