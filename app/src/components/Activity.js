@@ -16,7 +16,7 @@ const Activity = styled.section`
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 2%auto;
+    margin: 2%;
 
     button {
         border: none;
@@ -54,7 +54,7 @@ const Fact = (props) => {
                 <h2>{activity.activity}</h2>
                 <p>Type: {activity.type}</p>
                 <p>Number of People Needed: {activity.participants}</p>
-                <p>Price: ${activity.price}</p>
+                <p>Price on a scale from 0 to 1: {activity.price}</p>
                 <button onClick={handleClick}>Get Unbored</button>
             </Activity>
         // </Container>
