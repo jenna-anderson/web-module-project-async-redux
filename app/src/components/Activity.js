@@ -3,13 +3,6 @@ import { getActivity } from '../actions';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-
-// const Container = styled.div`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// `;
-
 const Activity = styled.section`
     display: flex;
     flex-direction: column;
@@ -49,7 +42,6 @@ const Fact = (props) => {
     }
 
     return(
-        // <Container>
             <Activity>
                 <h2>{activity.activity}</h2>
                 <p>Type: {activity.type}</p>
@@ -57,7 +49,6 @@ const Fact = (props) => {
                 <p>Price on a scale from 0 to 1: {activity.price}</p>
                 <button onClick={handleClick}>Get Unbored</button>
             </Activity>
-        // </Container>
     )
 }
 
